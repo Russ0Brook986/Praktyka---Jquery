@@ -1,0 +1,343 @@
+<!-- <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Zadanie 1</title>
+
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Ćwiczenia jQuery - Zadanie 1</h1>
+
+    <div id="container">
+        To jest kontener
+    </div>
+
+    <hr>
+
+    <h2>Lista gier</h2>
+
+    <ul id="lista">
+        <li id="pierwszy">Minecraft</li>
+        <li>Terraria</li>
+        <li>Bloodborne</li>
+        <li>Mass Effect</li>
+        <li>The Forest</li>
+    </ul>
+
+    <hr>
+
+    <h2>Linki</h2>
+
+    <a href="#">Google</a><br>
+    <a href="#">YouTube</a><br>
+    <a href="#">Wikipedia</a>
+
+    Twój kod jQuery 
+    <script>
+
+        $(function(){
+          $("#container").css("background-color", "grey"); //ćwiczenie 1
+          $("#container").css("letter-spacing", "5px"); //ćwiczenie 2 
+          $('[href = "#"]').attr("href", "https://pl.wikipedia.org/"); //ćwiczenie 3
+          $("li").eq(3).css("background-color", "lightgrey"); //ćwiczenie 4
+          $("li").not("#pierwszy").css("background-color", "lightblue"); //ćwiczenie 5
+          $("a").eq(1).css("background-color", "black").css("color", "white"); //ćwiczenie 6
+          $("li").eq(3).css("background-color", "lightgray"); //ćwiczenie 7
+          $("li").not("$li".eq(3)).css("background-color", "lightblue"); //ćwiczenie 7
+        });
+
+    </script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Zadanie 2</title>
+
+   
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1 id="gra">Project: Zomboid</h1>
+
+    <h2>Lista gier</h2>
+
+    <ul id="lista">
+        <li>Minecraft</li>
+        <li>Terraria</li>
+        <li>Bloodborne</li>
+        <li>Mass Effect</li>
+        <li>The Forest</li>
+    </ul>
+
+    <hr>
+
+    <p>Testowy tekst</p>
+
+    
+    <script>
+
+        $(function(){
+         console.log($("#gra").text()); //ćwiczenie 1
+         $("li").eq(0).text("Terraria"); //ćwiczenie 2
+         console.log($("ul").html()); //ćwiczenie 3
+         $("ul").append('<li>' + "Spider-Man 2" + '</li>'); //ćwiczenie 4
+         $("ul").prepend('<li>' + "Bloodborne" + '</li>'); //ćwiczenie 5
+         $("li").last().remove(); //ćwiczenie 6
+         let gra = $("#gra").text(); //ćwiczenie 7
+         $("ul").append('<li>' + gra + '</li>'); //ćwiczenie 7
+        });
+
+    </script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Zadanie 3</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Zadanie 3</h1>
+
+    <button id="przywitaj">Przywitaj</button>
+    <button id="resetuj">Resetuj</button>
+
+    <p id="komunikat"></p>
+    <p id="komunikat2"></p>
+
+    <div id="kwadrat" style="
+        width: 150px;
+        height: 150px;
+        background-color: lightgrey;
+        margin-top: 20px;
+    "></div>
+
+    <script>
+
+        $(function(){
+          $("#przywitaj").click(function(){ //ćwiczenie 1
+            console.log("Cześć");  //ćwiczenie 1
+          });
+
+          $("#przywitaj").click(function(){ //ćwiczenie 2
+            alert("Cześć"); // ćwiczenie 2
+          });
+
+          $("#przywitaj").click(function(){ //ćwiczenie 3
+            $("#komunikat").text("Cześć!"); //ćwiczenie 3
+          });
+
+          $("#kwadrat").click(function(){ //ćwiczenie 4
+            $("#kwadrat").css("background-color", "red") // ćwiczenie 4
+          })
+
+          $("#resetuj").click(function(){
+            $("#kwadrat").css("background-color", "lightgrey") //ćwiczenie 5
+            $("#komunikat").text(""); //ćwiczenie 5
+            $("#komunikat2").text("")  //ćwiczenie 5
+          })
+
+          let ile = 0;  //ćwiczenie 6
+          $("#kwadrat").click(function(){ //ćwiczenie 6
+            ile++ //ćwiczenie 6
+            $("#komunikat2").text("Kliknięto " +  ile  + " razy") //ćwiczenie 6
+          })
+        });
+    </script>
+
+</body>
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Zadanie 4</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Lista zakupów</h1>
+
+    <ul id="lista">
+        <li>Chleb</li>
+        <li>Mleko</li>
+    </ul>
+
+    <input type="text" id="produkt" placeholder="Nazwa produktu">
+
+    <br><br>
+
+    <button id="naKoniec">Dodaj na koniec</button>
+    <button id="naPoczatek">Dodaj na początek</button>
+
+    <br><br>
+
+    <input type="checkbox" id="accept">
+    <label for="accept">Czy akceptujesz?</label>
+
+    <button id="send" disabled>Wyślij</button>
+
+    <script>
+
+        $(function(){
+            $("#produkt").val(); //ćwiczenie 1
+            $("#naKoniec").click(function(){ //ćwiczenie 1
+                console.log($("#produkt").val()); //ćwiczenie 1
+            })
+
+            $("#produkt").val(); //ćwiczenie 2 
+            $("#naKoniec").click(function(){ //ćwiczenie 2
+                console.log($("#produkt").val().length) //ćwiczenie 2
+            })
+
+            $("#produkt").val();
+            $("#naKoniec").click(function(){
+                if($("#produkt").val().length > 0){
+                   console.log("Dodano produkt")
+                }else{
+                    console.log("Nie dodano produktu")   
+                }
+            })   //ćwiczenie 3
+
+            $("#naKoniec").click(function(){
+                $("#produkt").val();
+                if($("#produkt").val().length > 0){
+                   $("ul").append('<li>' + $("#produkt").val() + '</li>')
+                }
+            })  //ćwiczenie 4
+
+              $("#naKoniec").click(function(){
+                $("#produkt").val();
+                if($("#produkt").val().length > 0){
+                   $("ul").append('<li>' + $("#produkt").val() + '</li>')
+                   $("#produkt").val("");
+                }
+            }) //ćwiczenie 5
+
+               $("#naPoczatek").click(function(){
+                $("#produkt").val();
+                if($("#produkt").val().length > 0){
+                   $("ul").prepend('<li>' + $("#produkt").val() + '</li>')
+                   $("#produkt").val("");
+                }
+            }) //ćwiczenie 6
+
+           $("#naPoczatek").click(function(){
+    if($("#produkt").val().length > 0){
+        $("ul").prepend('<li>' + $("#produkt").val() + '</li>');
+        $("#produkt").val("");
+    }
+      $("li").first().css({
+            "color": "green",
+            "font-weight": "bold"
+        });
+}); //cwiczenie 7
+
+            $("#accept").change(function(){
+                if(this.checked){
+                  $("#send").removeAttr("disabled")
+                  console.log("Włączone")
+                }else{
+                    $("#send").attr("disabled", "disabled")
+                    console.log("Wyłączone")
+                }
+            }) //ćwiczenie 8
+        });
+
+    </script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Zadanie 5</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <style>
+        .link {
+            color: grey;
+            text-decoration: none;
+        }
+
+        .another_link {
+            background-color: black;
+        }
+
+        .completely_different_link {
+            background-color: yellow;
+        }
+
+        .a {
+            background-color: red;
+        }
+
+        .b {
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Linki</h1>
+
+    <a href="#" class="link">Minecraft</a><br>
+    <a href="#">Cyberpunk 2077</a><br>
+    <a href="#" class="link">Elden Ring</a><br>
+    <a href="#">Bloodborne</a>
+
+    <p>To jest przykładowy tekst.</p>
+
+    <button id="przycisk">Usuń klasy</button>
+
+    <script>
+
+        $(function(){
+         $("a").eq(1).addClass("another_link")  //ćwiczenie 1
+         $("a").eq(2).removeClass("link") //ćwiczenie 2
+         $("p").addClass("a").addClass("b")  //ćwiczenie 3
+         $("#przycisk").click(function(){
+            $("p").removeClass("a").removeClass("b")
+            alert("SUKCES!")
+         }) //ćwiczenie 4 
+// Wszytskie ćwiczenia to ćwiczenie 5 !
+        });
+
+    </script>
+
+</body>
+</html>
